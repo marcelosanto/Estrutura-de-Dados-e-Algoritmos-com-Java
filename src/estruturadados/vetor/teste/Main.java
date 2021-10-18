@@ -16,5 +16,6 @@ public class Main {
 
         System.out.println(vetor.tamanho());
         System.out.println(vetor.toString());
+        System.out.println(vetor.busca(6));
     }
 }
