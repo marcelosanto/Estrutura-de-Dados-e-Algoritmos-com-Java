@@ -4,7 +4,7 @@ import estruturadados.vetor.Vetor;
 
 public class Main {
     public static void main(String[] args) {
-        Vetor vetor = new Vetor(5);
+        Vetor vetor = new Vetor(10);
 
         vetor.adiciona("Elemento 1");
         vetor.adiciona("Elemento 2");
@@ -13,5 +13,8 @@ public class Main {
         vetor.adiciona("Elemento 5");
         vetor.adiciona("Elemento 6");
         vetor.adiciona("Elemento 7");
+
+        System.out.println(vetor.tamanho());
+        System.out.println(vetor.toString());
     }
 }
