@@ -16,6 +16,6 @@ public class Main {
 
         System.out.println(vetor.tamanho());
         System.out.println(vetor.toString());
-        System.out.println(vetor.busca(6));
+        System.out.println(vetor.busca("Elemento 1"));
     }
 }
