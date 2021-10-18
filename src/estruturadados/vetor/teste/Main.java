@@ -14,10 +14,7 @@ public class Main {
 
         System.out.println(vetor);
 
-        vetor.adiciona(0, "A");
-        System.out.println(vetor);
-
-        vetor.adiciona(3, "D");
+        vetor.remove(1);
         System.out.println(vetor);
 
 
