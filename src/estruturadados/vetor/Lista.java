@@ -1,5 +1,8 @@
 package estruturadados.vetor;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Lista<T> {
 
     private T[] elementos;
@@ -64,6 +67,16 @@ public class Lista<T> {
         return -1;
     }
 
+    public boolean contem(T elemento) {
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(elemento)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public int tamanho() {
         return this.tamanho;
     }
@@ -96,5 +109,20 @@ public class Lista<T> {
 
 
         return s.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lista<?> lista = (Lista<?>) o;
+        return tamanho == lista.tamanho && Arrays.equals(elementos, lista.elementos);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(tamanho);
+        result = 31 * result + Arrays.hashCode(elementos);
+        return result;
     }
 }
