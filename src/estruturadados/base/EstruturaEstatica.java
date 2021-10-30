@@ -1,8 +1,8 @@
 package estruturadados.base;
 
 public class EstruturaEstatica<T> {
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
     public EstruturaEstatica(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
@@ -12,6 +12,11 @@ public class EstruturaEstatica<T> {
     public EstruturaEstatica() {
         this(10);
     }
+
+    public boolean estaVazio() {
+        return this.tamanho == 0;
+    }
+
 
     protected boolean adiciona(T elemento) {
         this.aumentaCapacidade();
@@ -39,7 +44,7 @@ public class EstruturaEstatica<T> {
         return true;
     }
 
-    private void aumentaCapacidade() {
+    protected void aumentaCapacidade() {
         if (this.tamanho == this.elementos.length) {
             T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
             for (int i = 0; i < this.elementos.length; i++) {
@@ -72,4 +77,6 @@ public class EstruturaEstatica<T> {
 
         return s.toString();
     }
+
+
 }
